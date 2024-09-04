@@ -1,0 +1,36 @@
+type Query {
+    lessons: [Lesson!]!
+    lesson(id: ID!): Lesson
+}
+
+type Lesson {
+    id: ID!
+    title: String!
+    description: String!
+    lessonType: LessonType!
+    tasks: [Task!]!
+}
+
+enum LessonType {
+    client
+    raiser
+}
+
+type Task {
+    id: ID!
+    title: String!
+    description: String!
+    lesson: ID!
+    screens: [Screen!]!
+}
+
+type Screen {
+    id: ID!
+    title: String!
+    task: ID!
+    text: String!
+    videoUrl: String
+    imageUrl: String
+    onlyInstruction: Boolean!
+}
+
