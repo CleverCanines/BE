@@ -1,0 +1,26 @@
+type Query {
+    getLessons: [Lesson]
+    getLesson(id: ID!): Lesson
+
+    getTasks: [Task]
+    getTasksByLessonId(lessonId: ID!): [Task]
+    getTask(id: ID!): Task
+
+    getScreens: [Screen]
+    getScreensByTaskId(taskId: ID!): [Screen]
+    getScreen(id: ID!): Screen
+}
+
+type Mutation {
+    addLesson(title: String!, description: String!, lesson_type: LessonType!): Lesson
+    updateLesson(id: ID!, title: String, description: String, lesson_type: LessonType): Lesson
+    deleteLesson(id: ID!): Lesson
+
+    addTask(title: String!, description: String!, lessonId: ID!): Task
+    updateTask(id: ID!, title: String, description: String, lessonId: ID): Task
+    deleteTask(id: ID!): Task
+
+    addScreen(title: String!, text: String!, videoUrl: String, imageUrl: String, onlyInstruction: Boolean!, taskId: ID!): Screen
+    updateScreen(id: ID!, title: String, text: String, videoUrl: String, imageUrl: String, onlyInstruction: Boolean, taskId: ID): Screen
+    deleteScreen(id: ID!): Screen
+}

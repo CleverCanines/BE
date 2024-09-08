@@ -1,36 +1,30 @@
-type Query {
-    lessons: [Lesson!]!
-    lesson(id: ID!): Lesson
-}
-
 type Lesson {
     id: ID!
     title: String!
     description: String!
-    lessonType: LessonType!
-    tasks: [Task!]!
+    lesson_type: LessonType!
 }
 
 enum LessonType {
     client
     raiser
+    staff
 }
 
 type Task {
     id: ID!
     title: String!
     description: String!
-    lesson: ID!
-    screens: [Screen!]!
+    lessonId: ID!
 }
 
 type Screen {
     id: ID!
     title: String!
-    task: ID!
     text: String!
     videoUrl: String
     imageUrl: String
     onlyInstruction: Boolean!
+    taskId: ID!
 }
 
