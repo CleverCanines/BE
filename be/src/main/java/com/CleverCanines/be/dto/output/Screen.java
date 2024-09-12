@@ -1,4 +1,6 @@
-package com.CleverCanines.be.dto;
+package com.CleverCanines.be.dto.output;
+
+import java.util.UUID;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -11,8 +13,11 @@ import lombok.Data;
 @Entity
 public class Screen {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
+
+    @Column(nullable = false)
+    private int orderIndex; //order in which the screen should be displayed
 
     @Column(nullable = false)
     private String title;
@@ -29,6 +34,6 @@ public class Screen {
     @Column(nullable = false)
     private boolean onlyInstruction; 
 
-    @Column(nullable = false)
-    private int taskId;
+    @Column(nullable = false) 
+    private UUID taskId; //UUID of the task to which the screen belongs
 }

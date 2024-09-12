@@ -13,15 +13,18 @@ type Query {
 }
 
 type Mutation {
-    addLesson(title: String!, description: String!, lesson_type: LessonType!): Lesson
-    updateLesson(id: ID!, title: String, description: String, lesson_type: LessonType): Lesson
+    addLesson(orderIndex: Int!, title: String!, description: String!, lesson_type: LessonType!, lessonWeek: Int!): Lesson
+    updateLesson(id: ID!, title: String, description: String, lesson_type: LessonType, lessonWeek: Int): Lesson
+    updateLessonOrderIndex(newLessonOrder: NewLessonOrder): [Lesson]
     deleteLesson(id: ID!): Lesson
 
-    addTask(title: String!, description: String!, lessonId: ID!): Task
+    addTask(orderIndex: Int!, title: String!, description: String!, lessonId: ID!): Task
     updateTask(id: ID!, title: String, description: String, lessonId: ID): Task
+    updateTaskOrderIndex(newOrder: NewOrder): [Task]
     deleteTask(id: ID!): Task
 
-    addScreen(title: String!, text: String!, videoUrl: String, imageUrl: String, onlyInstruction: Boolean!, taskId: ID!): Screen
+    addScreen(orderIndex: Int!, title: String!, text: String!, videoUrl: String, imageUrl: String, onlyInstruction: Boolean!, taskId: ID!): Screen
     updateScreen(id: ID!, title: String, text: String, videoUrl: String, imageUrl: String, onlyInstruction: Boolean, taskId: ID): Screen
+    updateScreenOrderIndex(newOrder: NewOrder): [Screen]
     deleteScreen(id: ID!): Screen
 }

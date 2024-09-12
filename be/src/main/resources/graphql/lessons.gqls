@@ -1,8 +1,10 @@
 type Lesson {
     id: ID!
+    orderIndex: Int!
     title: String!
     description: String!
     lessonType: LessonType!
+    lessonWeek: Int!
 }
 
 enum LessonType {
@@ -13,6 +15,7 @@ enum LessonType {
 
 type Task {
     id: ID!
+    orderIndex: Int!
     title: String!
     description: String!
     lessonId: ID!
@@ -20,11 +23,21 @@ type Task {
 
 type Screen {
     id: ID!
+    orderIndex: Int!
     title: String!
     text: String!
     videoUrl: String
     imageUrl: String
     onlyInstruction: Boolean!
     taskId: ID!
+}
+
+input NewLessonOrder {
+    newOrder: [ID!]!
+    newWeeks: [Int!]!
+}
+
+input NewOrder {
+    newOrder: [ID!]!
 }
 
