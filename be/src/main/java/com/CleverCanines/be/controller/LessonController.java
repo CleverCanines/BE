@@ -26,6 +26,11 @@ public class LessonController {
     }
 
     @QueryMapping
+    public List<Lesson> getLessonsByLessonType(@Argument LessonType lesson_type) {
+        return lessonService.getLessonsByLessonType(lesson_type);
+    }
+
+    @QueryMapping
     public Lesson getLesson(@Argument Integer id) {
         return lessonService.getLesson(id);
     }
@@ -35,7 +40,7 @@ public class LessonController {
         Lesson newLesson = new Lesson();
         newLesson.setTitle(title);
         newLesson.setDescription(description);
-        newLesson.setLesson_type(lesson_type);
+        newLesson.setLessonType(lesson_type);
         return lessonService.addLesson(newLesson);
     }
 
@@ -44,7 +49,7 @@ public class LessonController {
         Lesson lesson = lessonService.getLesson(id);
         lesson.setTitle(title);
         lesson.setDescription(description);
-        lesson.setLesson_type(lesson_type);
+        lesson.setLessonType(lesson_type);
         return lessonService.updateLesson(lesson);
     }
 

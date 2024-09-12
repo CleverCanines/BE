@@ -1,5 +1,6 @@
 type Query {
     getLessons: [Lesson]
+    getLessonsByLessonType(lesson_type: LessonType!): [Lesson]
     getLesson(id: ID!): Lesson
 
     getTasks: [Task]

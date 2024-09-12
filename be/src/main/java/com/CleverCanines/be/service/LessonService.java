@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.CleverCanines.be.dto.Lesson;
+import com.CleverCanines.be.enums.LessonType;
 import com.CleverCanines.be.repository.LessonRepository;
 
 
@@ -17,6 +18,10 @@ public class LessonService {
 
     public List<Lesson> getLessons() {
         return (List<Lesson>) lessonRepository.findAll();
+    }
+
+    public List<Lesson> getLessonsByLessonType(LessonType lessonType) {
+        return lessonRepository.findByLessonType(lessonType);
     }
 
     public Lesson getLesson(Integer id) {

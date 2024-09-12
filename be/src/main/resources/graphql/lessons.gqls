@@ -2,7 +2,7 @@ type Lesson {
     id: ID!
     title: String!
     description: String!
-    lesson_type: LessonType!
+    lessonType: LessonType!
 }
 
 enum LessonType {

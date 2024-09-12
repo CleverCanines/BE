@@ -26,5 +26,5 @@ public class Lesson {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private LessonType lesson_type; //either client, raiser or staff
+    private LessonType lessonType; //either client, raiser or staff
 }
