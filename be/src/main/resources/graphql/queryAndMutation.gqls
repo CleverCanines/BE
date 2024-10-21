@@ -10,6 +10,10 @@ type Query {
     getScreens: [Screen]
     getScreensByTaskId(taskId: ID!): [Screen]
     getScreen(id: ID!): Screen
+
+    getPersons: [Person]
+    getPersonsByRole(role: Role!): [Person]
+    getPerson(id: ID!): Person
 }
 
 type Mutation {
@@ -27,4 +31,8 @@ type Mutation {
     updateScreen(id: ID!, title: String, text: String, videoUrl: String, imageUrl: String, onlyInstruction: Boolean, taskId: ID): Screen
     updateScreenOrderIndex(newOrder: NewOrder): [Screen]
     deleteScreen(id: ID!): Screen
+
+    addPerson(username: String!, dogName: String, role: Role!): Person
+    updatePerson(id: ID!, username: String, dogName: String, role: Role): Person
+    deletePerson(id: ID!): Person
 }

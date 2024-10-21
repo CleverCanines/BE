@@ -1,0 +1,12 @@
+type Person {
+    id: ID!
+    username: String!
+    dogName: String #Null if user has no dog, or is staff
+    role: Role!
+}
+
+enum Role {
+    client
+    raiser
+    staff
+}

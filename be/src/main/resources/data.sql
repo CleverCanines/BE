@@ -56,3 +56,8 @@ INSERT INTO screen (id, order_index, title, task_id, `text`, only_instruction) V
 
 INSERT INTO screen (id, order_index, title, task_id, `text`, image_url, video_url, only_instruction) VALUES ('58a6253c-7250-4bb0-9bbb-575d707fbea0', 11, 'Screen 3', '678c2f6c-5f73-4264-9755-397e3d415c33', 'This is a staff screen', 'https://www.pawswithacause.org/wp-content/themes/paws/graphics/header-logo.png', 'https://www.youtube.com/embed/uRF9HLpTDyE?si=lJaNxQ39Cli6JtzY', false);
 INSERT INTO screen (id, order_index, title, task_id, `text`, only_instruction) VALUES ('088fade5-6510-48bb-8538-331d24a2ec85', 12, 'Screen 4', '678c2f6c-5f73-4264-9755-397e3d415c33', 'This is a staff screen', true);
+
+/* Adding User data */
+INSERT INTO person (id, username, dog_name, `role`) VALUES ('66249183-c8a3-4482-a65b-0947aac07369', 'testingClient', 'dog1', 'client');
+INSERT INTO person (id, username, dog_name, `role`) VALUES ('a2b9d0cf-40f4-4f72-8d10-b3450e7025d6', 'testingRaiser', 'dog2', 'raiser');
+INSERT INTO person (id, username, `role`) VALUES ('67ab9a75-aae9-4242-a455-51df0bcd0422', 'testingStaff', 'staff');
