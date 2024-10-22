@@ -1,0 +1,17 @@
+type LessonInteraction {
+    personId: ID!
+    lessonId: ID!
+    progress: Int!
+}
+
+type TaskInteraction {
+    personId: ID!
+    taskId: ID!
+    progress: Int!
+}
+
+type ScreenInteraction {
+    personId: ID!
+    screenId: ID!
+    complete: bool!
+}

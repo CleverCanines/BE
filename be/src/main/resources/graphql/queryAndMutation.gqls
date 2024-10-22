@@ -14,6 +14,10 @@ type Query {
     getPersons: [Person]
     getPersonsByRole(role: Role!): [Person]
     getPerson(id: ID!): Person
+
+    getLessonInteractionsByPersonId(personId: ID!): [LessonInteraction]
+    getTaskInteractionsByPersonId(personId: ID!): [TaskInteraction]
+    getScreenInteractionsByPersonId(personId: ID!): [ScreenInteraction]
 }
 
 type Mutation {
@@ -35,4 +39,7 @@ type Mutation {
     addPerson(username: String!, dogName: String, role: Role!): Person
     updatePerson(id: ID!, username: String, dogName: String, role: Role): Person
     deletePerson(id: ID!): Person
+
+    addScreenInteraction(personId: ID!, screenId: ID!, done: Boolean!): ScreenInteraction
+    updateScreenInteraction(personId: ID!, screenId: ID!, done: Boolean!): ScreenInteraction
 }
