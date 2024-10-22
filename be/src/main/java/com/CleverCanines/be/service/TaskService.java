@@ -18,6 +18,9 @@ public class TaskService {
     @Autowired
     private ScreenService screenService;
 
+    // @Autowired
+    // private TaskInteractionService taskInteractionService;
+
     public List<Task> getTasks() {
         return (List<Task>) taskRepository.findAllByOrderByOrderIndexAsc();
     }
@@ -43,7 +46,10 @@ public class TaskService {
         screenService.getScreensByTaskId(id).forEach(screen -> {
             screenService.deleteScreen(screen.getId());
         });
-        
+
+        // delete tasks interactions
+        // taskInteractionService.deleteTaskInteractionsByTaskId(id);
+
         taskRepository.deleteById(id);
     }
 }

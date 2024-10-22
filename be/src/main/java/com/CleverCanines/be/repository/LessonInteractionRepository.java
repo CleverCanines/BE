@@ -10,4 +10,5 @@ import java.util.List;
 @Repository
 public interface LessonInteractionRepository extends CrudRepository<LessonInteraction, UUID> {
     List<LessonInteraction> findByPersonId(UUID personId);
+    void deleteByLessonId(UUID lessonId);
 }

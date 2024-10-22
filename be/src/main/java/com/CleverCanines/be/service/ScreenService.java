@@ -15,6 +15,8 @@ public class ScreenService {
     @Autowired
     private ScreenRepository screenRepository;
 
+    // @Autowired ScreenInteractionService screenInteractionService;
+
     public List<Screen> getScreens() {
         return (List<Screen>) screenRepository.findAllByOrderByOrderIndexAsc();
     }
@@ -36,6 +38,9 @@ public class ScreenService {
     }
 
     public void deleteScreen(UUID id) {
+        // delete the interactions for the screen
+        // screenInteractionService.deleteScreenInteractionsByScreenId(id);
+
         screenRepository.deleteById(id);
     }
 }

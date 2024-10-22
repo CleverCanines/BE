@@ -40,6 +40,6 @@ type Mutation {
     updatePerson(id: ID!, username: String, dogName: String, role: Role): Person
     deletePerson(id: ID!): Person
 
-    addScreenInteraction(personId: ID!, screenId: ID!, done: Boolean!): ScreenInteraction
-    updateScreenInteraction(personId: ID!, screenId: ID!, done: Boolean!): ScreenInteraction
+    addScreenInteraction(personId: ID!, screenId: ID!, complete: Boolean!): ScreenInteraction
+    updateScreenInteraction(personId: ID!, screenId: ID!, complete: Boolean!): ScreenInteraction
 }

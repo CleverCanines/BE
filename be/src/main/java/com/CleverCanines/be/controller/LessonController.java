@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import com.CleverCanines.be.dto.input.NewLessonOrder;
 import com.CleverCanines.be.dto.output.Lesson;
 import com.CleverCanines.be.enums.LessonType;
+import com.CleverCanines.be.service.LessonInteractionService;
 import com.CleverCanines.be.service.LessonService;
 import com.CleverCanines.be.service.TaskService;
 
@@ -22,6 +23,9 @@ public class LessonController {
 
     @Autowired
     private TaskService taskService;
+
+    @Autowired
+    private LessonInteractionService lessonInteractionService;
 
     // QueryMappings
 
@@ -83,6 +87,9 @@ public class LessonController {
         taskService.getTasksByLessonId(id).forEach(task -> {
             taskService.deleteTask(task.getId());
         });
+
+        // delete lessons interactions
+        lessonInteractionService.deleteLessonInteractionsByLessonId(id);
 
         lessonService.deleteLesson(id);
         return id;

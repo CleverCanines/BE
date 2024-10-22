@@ -9,4 +9,7 @@ import java.util.List;
 @Repository
 public interface ScreenInteractionRepository extends CrudRepository<ScreenInteraction, UUID> {
     List<ScreenInteraction> findByPersonId(UUID personId);
+    List<ScreenInteraction> findByScreenId(UUID screenId);
+    List<ScreenInteraction> findByPersonIdAndScreenId(UUID personId, UUID screenId);
+    void deleteByPersonIdAndScreenId(UUID personId, UUID screenId);
 }

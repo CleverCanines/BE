@@ -25,7 +25,7 @@ public class LessonInteractionService {
         return lessonInteractionRepository.save(lessonInteraction);
     }
 
-    public void deleteLessonInteraction(UUID lessonInteractionId) {
-        lessonInteractionRepository.deleteById(lessonInteractionId);
+    public void deleteLessonInteractionsByLessonId(UUID lessonInteractionId) {
+        lessonInteractionRepository.deleteByLessonId(lessonInteractionId);
     }
 }

@@ -11,4 +11,6 @@ import java.util.UUID;
 @Repository
 public interface TaskInteractionRepository extends CrudRepository<TaskInteraction, UUID> {
     List<TaskInteraction> findByPersonId(UUID personId);
+    List<TaskInteraction> findByPersonIdAndTaskId(UUID personId, UUID taskId);
+    void deleteByTaskId(UUID taskId);
 }

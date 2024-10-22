@@ -13,5 +13,5 @@ type TaskInteraction {
 type ScreenInteraction {
     personId: ID!
     screenId: ID!
-    complete: bool!
+    complete: Boolean!
 }

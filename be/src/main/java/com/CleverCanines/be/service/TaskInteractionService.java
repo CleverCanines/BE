@@ -17,6 +17,10 @@ public class TaskInteractionService {
         return taskInteractionRepository.findByPersonId(personId);
     }
 
+    public List<TaskInteraction> getTaskInteractionsByPersonIdAndTaskId(UUID personId, UUID taskId) {
+        return taskInteractionRepository.findByPersonIdAndTaskId(personId, taskId);
+    }
+
     public TaskInteraction addTaskInteraction(TaskInteraction taskInteraction) {
         return taskInteractionRepository.save(taskInteraction);
     }
@@ -25,7 +29,7 @@ public class TaskInteractionService {
         return taskInteractionRepository.save(taskInteraction);
     }
 
-    public void deleteTaskInteraction(UUID taskInteractionId) {
-        taskInteractionRepository.deleteById(taskInteractionId);
+    public void deleteTaskInteractionsByTaskId(UUID taskInteractionId) {
+        taskInteractionRepository.deleteByTaskId(taskInteractionId);
     }
 }
