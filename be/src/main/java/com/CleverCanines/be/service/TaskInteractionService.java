@@ -22,6 +22,14 @@ public class TaskInteractionService {
     }
 
     public TaskInteraction addTaskInteraction(TaskInteraction taskInteraction) {
+        // check if the task interaction already exists
+        List<TaskInteraction> taskInteractions = taskInteractionRepository.findByPersonIdAndTaskId(taskInteraction.getPersonId(), taskInteraction.getTaskId());
+        if (taskInteractions.size() > 0) {
+            // if it does, update the existing task interaction
+            TaskInteraction existingTaskInteraction = taskInteractions.get(0);
+            existingTaskInteraction.setProgress(taskInteraction.getProgress());
+            return taskInteractionRepository.save(existingTaskInteraction);
+        }
         return taskInteractionRepository.save(taskInteraction);
     }
 

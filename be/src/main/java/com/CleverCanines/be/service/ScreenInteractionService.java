@@ -91,10 +91,10 @@ public class ScreenInteractionService {
             for (TaskInteraction ti : taskInteractions) {
                 sum += ti.getProgress();
             }
-            lessonInteractionPercentage = sum / taskInteractions.size();
+            lessonInteractionPercentage = sum / tasks.size();
         }
         // update the lesson interaction
-        lessonInteractionService.addLessonInteraction(new LessonInteraction(UUID.randomUUID(), screenInteraction.getPersonId(), lessonId, (int)lessonInteractionPercentage));
+        lessonInteractionService.addLessonInteraction(new LessonInteraction(UUID.randomUUID(), lessonId, screenInteraction.getPersonId(), (int)lessonInteractionPercentage));
     }
     
     private List<ScreenInteraction> getAllScreenInteractionsForScreensByPersonId(UUID personId, List<UUID> screens) {
