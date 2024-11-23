@@ -21,8 +21,8 @@ type Query {
 }
 
 type Mutation {
-    addLesson(orderIndex: Int!, title: String!, description: String!, lesson_type: LessonType!, lessonWeek: Int!): Lesson
-    updateLesson(id: ID!, title: String, description: String, lesson_type: LessonType, lessonWeek: Int): Lesson
+    addLesson(orderIndex: Int!, title: String!, description: String!, lesson_type: LessonType!, lesson_week: Int!): Lesson
+    updateLesson(id: ID!, title: String, description: String, lesson_type: LessonType, lesson_week: Int): Lesson
     updateLessonOrderIndex(newLessonOrder: NewLessonOrder): [Lesson]
     deleteLesson(id: ID!): Lesson
 
